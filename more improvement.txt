@@ -1,0 +1,51 @@
+1) Add context & interpretation
+
+What: Explain each port/service in one short line.
+Why: Helps students understand what a port does.
+Example:
+
+Port 135 → RPC (Remote Procedure Call)
+
+2) Show risk level
+
+What: Add a Risk column with Low / Medium / High.
+Why: Quick assessment of danger per port/service.
+Notes: Can be driven from a configurable static list (e.g., known Windows attack surfaces).
+
+3) Indicate connection direction
+
+What: Add Direction column: Inbound / Outbound / Listening.
+Why: Shows server vs client behavior at a glance.
+
+4) Highlight unusual connections
+
+What: Flag connections to foreign or unknown IPs.
+Rule (example): mark if remote_ip is outside private ranges: 192.168.x.x, 10.x.x.x, 172.16–31.x.x.
+Why: Quickly draws attention to potentially suspicious external traffic.
+
+5) Capture timestamps
+
+What: Add a Timestamp column (ISO 8601).
+Why: Lets you track when ports open/close and correlate events.
+
+6) Detect interface & network profile
+
+What: Show adapter name + profile (Public/Private/Host-only).
+Example display:
+
+Local IP: 192.168.100.68 (Wi-Fi, Private)
+
+Local IP: 192.168.56.1 (VirtualBox, Host-Only)
+
+7) Educational mode (--explain)
+
+What: A switch that outputs human-readable context & short remediation.
+Example output:
+
+Port 445 (SMB) is open and listening. This is used for Windows file sharing and can be exploited if exposed externally.
+
+Suggested minimal table (columns to show)
+
+Timestamp | Direction | Local (IP:Port) | Remote (IP:Port) | Protocol | Interface (Profile) | Service | Risk | Flags | Notes
+
+If you want, I can quickly convert this into a single-line checklist, a small UI mockup, or a JSON schema for the table — which would you prefer?
