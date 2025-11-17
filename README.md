@@ -37,9 +37,6 @@ It demonstrates how to query system-level connection tables, update UI component
 /SettingsForm.cs
 /.gitignore
 
-## License
-This repository currently has no license. Add a LICENSE file if you want others to use or modify your code.
-
 ## Badges
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)  
 ![Platform](https://img.shields.io/badge/platform-windows-blue)  
